@@ -46,7 +46,7 @@ var webpackConfig = {
 ```
 
 This will upload the `dist/bundle.js` to the specified folder:
-![SharePoint library result](https://imgur.com/a/vlfl1)
+![SharePoint library result](https://i.imgur.com/SA72gNH.png =250x)
 
 Configuration
 -------------
