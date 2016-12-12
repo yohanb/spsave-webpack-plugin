@@ -46,7 +46,7 @@ var webpackConfig = {
 ```
 
 This will upload the `dist/bundle.js` to the specified folder:
-
+![SharePoint library result](https://imgur.com/a/vlfl1)
 
 Configuration
 -------------
@@ -57,4 +57,4 @@ folder since the uploaded files will be the ones emitted by the Webpack build.
 
 # License
 
-This project is licensed under [ISC](https://opensource.org/licenses/ISC).
+This project is licensed under MIT.
