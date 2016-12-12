@@ -1,7 +1,6 @@
-const path = require('path');
-const spsave = require('spsave').spsave;
+var spsave = require('spsave').spsave;
 
-const utils = require('./lib/utils');
+var utils = require('./lib/utils');
 
 function apply(options, compiler) {
 
@@ -9,8 +8,8 @@ function apply(options, compiler) {
     compiler.plugin('emit', function (compilation, callback) {
         
         // Build promises and execute all at once
-        const assetsFileOptions = utils.getAssetsFileOptions(options.fileOptions.folder, compilation);
-        const spSavePromises = assetsFileOptions.map(function(fileOptions) {
+        var assetsFileOptions = utils.getAssetsFileOptions(options.fileOptions.folder, compilation);
+        var spSavePromises = assetsFileOptions.map(function(fileOptions) {
             return spsave(options.coreOptions, options.credentialOptions, fileOptions);
         })
 
