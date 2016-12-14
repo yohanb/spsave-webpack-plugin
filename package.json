@@ -1,8 +1,9 @@
 {
   "name": "spsave-webpack-plugin",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Webpack plugin that uploads webpack assets to SharePoint using the spsave npm module.",
   "main": "index.js",
+  "repository": "yohanb/spsave-webpack-plugin.git",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
