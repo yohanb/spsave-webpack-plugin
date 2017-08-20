@@ -17,6 +17,6 @@
   "license": "ISC",
   "dependencies": {
     "path": "^0.12.7",
-    "spsave": "^3.0.2"
+    "spsave": "^3.1.0"
   }
 }
