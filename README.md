@@ -46,14 +46,14 @@ var webpackConfig = {
 ```
 
 This will upload the `dist/bundle.js` to the specified folder:
-![SharePoint library result](https://i.imgur.com/SA72gNH.png =250x)
+![SharePoint library result](https://i.imgur.com/SA72gNH.png=250x)
 
 Configuration
 -------------
 Since the Webpack plugin is based on the [spsave](https://www.npmjs.com/package/spsave) node module, all configuration options are 
 virtually identical. The **only difference** is the fact that you do not need to specify `fileOptions` other that the destination
 folder since the uploaded files will be the ones emitted by the Webpack build.
-**NOTE:** This plugin is not intented to be used when in a _hot-reloading_ Webpack setup.
+**NOTE:** This plugin is not intended to be used when in a _hot-reloading_ Webpack setup.
 
 # License
 
