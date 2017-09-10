@@ -16,33 +16,35 @@ $ npm install spsave-webpack-plugin --save-dev
 Basic Usage
 -----------
 
-The plugin will generate an HTML5 file for you that includes all your webpack
-bundles in the body using `script` tags. Just add the plugin to your webpack
-config as follows:
+The plugin will upload all your webpack's assets to SharePoint using [spsave](https://github.com/s-KaiNet/spsave). Just add the plugin to your webpack config as follows:
 
 ```javascript
-var SPSaveWebpackPlugin = require('spave-webpack-plugin');
+var path = require('path');
+
+var SPSaveWebpackPlugin = require('spsave-webpack-plugin');
+var root = path.join.bind(path, path.resolve(__dirname));
 
 var webpackConfig = {
-  entry: 'index.js',
+  entry: './index.js',
   output: {
-    path: 'dist',
+    path: root('dist'),
     filename: 'bundle.js'
   },
   plugins: [new SPSaveWebpackPlugin({
-    "coreOptions": {
-        "checkin": true,
-        "checkinType": 1,
-        "siteUrl": "[your sharepoint site URL]"
-    },
-    "credentialOptions": {
-            /* See https://github.com/s-KaiNet/node-sp-auth#params for authentication options */
-    },
-    "fileOptions": {
-        "folder": "Style Library/dist"
-    }
-})]
+            "coreOptions": {
+                "checkin": true,
+                "checkinType": 1,
+                "siteUrl": "[your sharepoint site URL]"
+            },
+            "credentialOptions": {
+                    /* See https://github.com/s-KaiNet/node-sp-auth#params for authentication options */
+            },
+            "fileOptions": {
+                "folder": "Style Library/dist"
+            }
+        })]
 };
+module.exports = webpackConfig;
 ```
 
 This will upload the `dist/bundle.js` to the specified folder:
