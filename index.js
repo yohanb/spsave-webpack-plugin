@@ -5,7 +5,7 @@ var utils = require('./lib/utils');
 function apply(options, compiler) {
 
     // When assets are being emmited (not yet on file system)
-    compiler.plugin('emit', function (compilation, callback) {
+    compiler.hooks.emit.tapAsync('spsave-webpack-plugin', function(compilation, callback) {
         
         // Build promises and execute all at once
         var assetsFileOptions = utils.getAssetsFileOptions(options.fileOptions.folder, compilation);
