@@ -57,6 +57,13 @@ virtually identical. The **only difference** is the fact that you do not need to
 folder since the uploaded files will be the ones emitted by the Webpack build.
 **NOTE:** This plugin is not intended to be used when in a _hot-reloading_ Webpack setup.
 
+New in version 2.0
+---------------
+
+- Webpack 4.0 support (not compatible with older Webpack versions anymore)
+- Support for [HTML Webpack Plugin](https://www.npmjs.com/package/html-webpack-plugin)
+- Fixed issue with wrong folder structure on SharePoint (flat folder structure instead of intended folder structure)
+
 # License
 
 This project is licensed under MIT.
