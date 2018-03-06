@@ -14,7 +14,7 @@
     "plugin"
   ],
   "author": "Yohan Belval",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "path": "^0.12.7",
     "spsave": "^3.1.0"
