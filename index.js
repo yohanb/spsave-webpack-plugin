@@ -7,8 +7,16 @@ function apply(options, compiler) {
     //Hook into plugins
     compiler.hooks.compilation.tap('spsave-webpack-plugin', function (compilation) {
         // HTML Webpack Plugin support
-        if (compilation.hooks.htmlWebpackPluginAfterHtmlProcessing != null) {
-            compilation.hooks.htmlWebpackPluginAfterHtmlProcessing.tapAsync('spsave-webpack-plugin', function (htmlWebpackCompilation, htmlWebpackCallback) {
+        let hook = compilation.hooks.htmlWebpackPluginAfterHtmlProcessing;
+        if (!hook) {
+            const [HtmlWebpackPlugin] = compiler.options.plugins.filter(
+                (plugin) => plugin.constructor.name === 'HtmlWebpackPlugin');
+            if (HtmlWebpackPlugin) {
+                hook = HtmlWebpackPlugin.constructor.getHooks(compilation).beforeEmit;
+            }
+        }
+        if (hook) {
+            hook.tapAsync('spsave-webpack-plugin', function (htmlWebpackCompilation, htmlWebpackCallback) {
                 var htmlFile = htmlWebpackCompilation.outputName;
                 var htmlFileTargetFolder = utils.getTargetFolder(options.fileOptions.folder, htmlFile);
                 var content = htmlWebpackCompilation.html;
